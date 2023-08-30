@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Student from "./components/Student";
-// import {useState} from "react";
-const students= [
+const students = [
   {
     name: "Cait Yomorta",
     bio:
@@ -64,21 +63,21 @@ const students= [
       },
     ],
   },
-]
+];
 function App() {
-  const[studentData, setStudentData] = useState(students);
-
+  const [studentData, setStudentData] = useState(students);
   return (
     <div className="App">
-    {students.map((student,i) => {
-  return(
-    <Student name={student.name} bio={student.bio} scores = {student.scores} key={i}/>
-    
-    
-  )})
-} 
+      {students.map((student, i) => {
+        return (
+          <Student  
+            name={student.name} //pass from App to Student
+            bio={student.bio} //pass to Student
+            scores={student.scores} key ={i} //pass to Student
+          />
+        );
+      })}
     </div>
   );
 }
-
 export default App;
